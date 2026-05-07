@@ -12,4 +12,4 @@ def test_predict():
 
     assert response.status_code == 200
     assert data['predicted_role'] == "AI Engineer"
-    
+    assert set(data['skills_found']) == {"machine learning", "python"}
