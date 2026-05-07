@@ -1,3 +1,26 @@
+skills_db = [
+    "python",
+    "machine learning",
+    "sql",
+    "excel",
+    "docker",
+    "flask",
+    "react"
+]
+
+def extract_skills(resume):
+
+    found_skills = []
+
+    resume = resume.lower()
+
+    for skill in skills_db:
+        if skill in resume:
+            found_skills.append(skill)
+
+    return found_skills
+
+
 def predict_role(resume):
 
     resume = resume.lower()
@@ -10,8 +33,5 @@ def predict_role(resume):
 
     elif "react" in resume:
         return "Frontend Developer"
-
-    elif "docker" in resume:
-        return "DevOps Engineer"
 
     return "Unknown"
